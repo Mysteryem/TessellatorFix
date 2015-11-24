@@ -6,15 +6,10 @@
 package uk.co.mysterymayhem.tessellatorfix;
 
 import java.util.Iterator;
-import java.util.PriorityQueue;
 import net.minecraft.launchwrapper.IClassTransformer;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.shader.TesselatorVertexState;
-import net.minecraft.client.util.QuadComparator;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.FieldInsnNode;
 import org.objectweb.asm.tree.InsnList;
@@ -77,31 +72,9 @@ public class Transformer implements IClassTransformer{
       if ((m.name.equals(targetMethodName) && m.desc.equals("(FFF)Lnet/minecraft/client/shader/TesselatorVertexState;"))) {
         FMLLog.info("Inside target Tessellator method");
         
-//        AbstractInsnNode currentNode = null;
-//        AbstractInsnNode targetNode = null;
-//        
-//        Iterator<AbstractInsnNode> iter = m.instructions.iterator();
-//        
-//        int index = -1;
-//        
-//        while (iter.hasNext()) {
-//          index++;
-//          currentNode = iter.next();
-//          
-//          if (currentNode.getOpcode() == Opcodes.GETFIELD) {
-//            targetNode = currentNode;
-//            fdiv_index = index;
-//          }
-//        }
-//        
-//        if (targetNode == null || fdiv_index == -1) {
-//          System.out.println("Failed to find target node, returning without changes");
-//          return bytes;
-//        }
-        
         InsnList toInject = new InsnList();
         
-        // Manual if (this.rawBufferIndex < 1) return
+        // Insertion of "if (this.rawBufferIndex < 1) return"
         LabelNode labelNode = new LabelNode();
         
         toInject.add(new VarInsnNode(Opcodes.ALOAD, 0));
