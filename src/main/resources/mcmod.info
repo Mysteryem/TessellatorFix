@@ -1,0 +1,16 @@
+[
+{
+  "modid": "myst_tessellator_fix",
+  "name": "MysteryemTessellatorFix",
+  "description": "CoreMod to fix Tessellator issues, see MinecraftForge #981",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://gamingmasters.org",
+  "updateUrl": "",
+  "authorList": ["Mysteryem"],
+  "credits": "Thanks to culegooner's ASM guide which in turn thanks AtomicStryker, Pahimar and denoflions.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
