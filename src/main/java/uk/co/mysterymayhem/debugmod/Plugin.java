@@ -1,20 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package uk.co.mysterymayhem.tessellatorfix;
+package uk.co.mysterymayhem.debugmod;
 
-import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
+import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import java.util.Map;
 
 /**
  *
  * @author Thomas
  */
-@IFMLLoadingPlugin.TransformerExclusions({"uk.co.mysterymayhem.tessellatorfix."})
-@IFMLLoadingPlugin.Name(value = "mysttessellatorfixcore")
-@IFMLLoadingPlugin.SortingIndex(value = 1001)
+@IFMLLoadingPlugin.TransformerExclusions({"uk.co.mysterymayhem.debugmod."})
+@IFMLLoadingPlugin.Name(value = "mystdebugcoremod")
+@IFMLLoadingPlugin.SortingIndex(value = 9001)
 public class Plugin implements IFMLLoadingPlugin{
   
   static boolean runtimeDeobfEnabled = false;
